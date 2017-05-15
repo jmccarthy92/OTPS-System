@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1035.0" styleClass="background" stylesheets="@OTPSTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminProductViewController">
+   <center>
+      <Pane prefHeight="398.0" prefWidth="289.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="productTable" layoutX="2.0" layoutY="-2.0" prefHeight="404.0" prefWidth="560.0">
+              <columns>
+                <TableColumn fx:id="ProductIdColumn" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="ProductNameColumn" prefWidth="209.0" text="Name" />
+                  <TableColumn fx:id="ProductPriceColumn" prefWidth="97.0" text="Price" />
+                  <TableColumn fx:id="ProductquantityColumn" prefWidth="85.0" text="Quantity" />
+                  <TableColumn fx:id="ProductratingColumn" prefWidth="93.0" text="Rating" />
+              </columns>
+            </TableView>
+         </children></Pane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="37.0" prefWidth="159.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Back">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER" prefHeight="54.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" text="Product Control">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <GridPane prefHeight="372.0" prefWidth="465.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="247.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="218.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="123.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#addProductButton" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Add Product">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#removeProductButton" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Remove Product" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#changePriceButton" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Change Price" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#changeQuantityButton" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Change Stock Quantity" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="idField" layoutX="27.0" layoutY="27.0" style="-fx-background-radius: 10;" />
+                  <Label layoutX="73.0" layoutY="6.0" text="Enter in ID" />
+                  <Label layoutX="70.0" layoutY="61.0" text="Enter in Name" />
+                  <TextField fx:id="nameField" layoutX="34.0" layoutY="90.0" style="-fx-background-radius: 10;" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button layoutX="34.0" layoutY="14.0" mnemonicParsing="false" onAction="#submitButtonID" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="SubmitID" />
+                  <Button layoutX="34.0" layoutY="91.0" mnemonicParsing="false" onAction="#submitButtonName" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="SubmitName" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Label layoutX="64.0" layoutY="14.0" text="Enter in Price" />
+                  <TextField fx:id="priceField" layoutX="31.0" layoutY="31.0" style="-fx-background-radius: 20;" />
+                  <Button layoutX="73.0" layoutY="93.0" mnemonicParsing="false" onAction="#submitButtonPrice" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="SubmitPrice">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <CheckBox fx:id="price_equalto" layoutX="17.0" layoutY="25.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="94.0" text="Equal to">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="price_greaterthan" layoutX="58.0" layoutY="69.0" mnemonicParsing="false" text="Greater than">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="price_lessthan" layoutX="111.0" layoutY="32.0" mnemonicParsing="false" text="Less than">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+   </left>
+</BorderPane>

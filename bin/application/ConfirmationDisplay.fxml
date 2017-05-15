@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="140.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ConfirmationDisplayController">
+   <center>
+      <Label fx:id="orderText" text="Label" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <Pane prefHeight="69.0" prefWidth="387.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="confirmButton" layoutX="161.0" layoutY="40.0" mnemonicParsing="false" onAction="#confirmClick" text="Confirm">
+               <font>
+                  <Font name="Rockwell Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="15.0" layoutY="-8.0" text="Has been transferred to the Shipping Department to be shipped!">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="742.0" prefWidth="1794.0" styleClass="background" stylesheets="@OTPSTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.viewAllOrderMenuController">
+   <top>
+      <VBox prefHeight="115.0" prefWidth="1051.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar styleClass="button-viewHist" stylesheets="@OTPSTheme.css">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="orderTable" prefHeight="627.0" prefWidth="1265.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="orderIdColumn" prefWidth="93.0" text="Order Id" />
+          <TableColumn fx:id="accountIdColumn" prefWidth="109.0" text="Account Id" />
+            <TableColumn fx:id="salesTotalColumn" prefWidth="111.0" text="Sales Total" />
+            <TableColumn fx:id="orderDateColumn" minWidth="3.0" prefWidth="116.0" text="Order Date" />
+            <TableColumn fx:id="orderStatusColumn" minWidth="0.0" prefWidth="120.0" text="Order Status" />
+            <TableColumn fx:id="orderAddressColumn" minWidth="0.0" prefWidth="134.0" text="Order Address" />
+            <TableColumn fx:id="creditCardColumn" minWidth="0.0" prefWidth="125.0" text="Credit Card #" />
+            <TableColumn fx:id="creditCardTypeColumn" minWidth="0.0" prefWidth="161.0" text="Credit Card Type" />
+            <TableColumn fx:id="csvColumn" minWidth="0.0" prefWidth="92.0" text="CSV #" />
+            <TableColumn fx:id="expColumn" prefWidth="137.0" text="Expiration Date" />
+            <TableColumn fx:id="isPaidColumn" minWidth="0.0" prefWidth="97.0" text="is Paid" />
+            <TableColumn fx:id="pListColumn" prefWidth="209.0" text="Product List" />
+        </columns>
+      </TableView>
+   </center>
+   <left>
+      <Pane prefHeight="627.0" prefWidth="289.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="shipOrder" layoutX="138.0" layoutY="199.0" mnemonicParsing="false" onAction="#shipOrderClick" prefHeight="41.0" prefWidth="133.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Ship Order" />
+            <Button fx:id="removeOrder" layoutX="136.0" layoutY="281.0" mnemonicParsing="false" onAction="#removeOrderClick" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Remove Order" />
+            <Button fx:id="searchButton" layoutX="131.0" layoutY="1.0" mnemonicParsing="false" onAction="#searchOrder" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <TextField fx:id="searchBox" layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="109.0" promptText="Enter Order Id...." />
+            <Button fx:id="refreshOrder" layoutX="52.0" layoutY="416.0" mnemonicParsing="false" onAction="#getAllOrderClick" prefHeight="76.0" prefWidth="180.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Refresh Orders">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="588.0" mnemonicParsing="false" onAction="#backButtonClick" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Back" />
+            <TextField fx:id="shipOrderField" layoutX="18.0" layoutY="199.0" prefHeight="25.0" prefWidth="109.0" promptText="Enter Order Id...." />
+            <TextField fx:id="removeOrderField" layoutX="18.0" layoutY="289.0" prefHeight="25.0" prefWidth="109.0" promptText="Enter Order Id...." />
+            <Label fx:id="invalidSearchLabel" layoutX="14.0" layoutY="37.0" text="Order ID Doesn't Exist" textFill="#f20404" />
+            <Label fx:id="invalidShipLabel" layoutX="31.0" layoutY="224.0" text="Invalid Order ID" textFill="RED" />
+            <TextField fx:id="searchOStatusField" layoutX="-3.0" layoutY="62.0" prefHeight="25.0" prefWidth="118.0" promptText="Enter Order Status..." />
+            <Button fx:id="searchOrderStatus" layoutX="120.0" layoutY="54.0" mnemonicParsing="false" onAction="#searchOrderStatusClick" prefHeight="41.0" prefWidth="169.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Search Order Status">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="invalidRemove" layoutX="52.0" layoutY="322.0" text="Invalid Order ID" textFill="RED" />
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

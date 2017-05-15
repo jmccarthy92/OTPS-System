@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane prefHeight="129.0" prefWidth="277.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.ShippedOrderController">
+   <bottom>
+      <Pane prefHeight="46.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="confirmButton" layoutX="113.0" layoutY="2.0" mnemonicParsing="false" onAction="#confirmButtonClick" text="Button" />
+         </children>
+      </Pane>
+   </bottom>
+   <center>
+      <Label text="Order Has Been Shipped" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </center>
+</BorderPane>

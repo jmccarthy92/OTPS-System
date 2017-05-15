@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="344.0" prefWidth="367.0" styleClass="background" stylesheets="@OTPSTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminControlScreenController">
+   <center>
+      <Pane prefHeight="310.0" prefWidth="367.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="83.0" layoutY="14.0" text="Administrative Menu">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="omcControl" layoutX="91.0" layoutY="67.0" mnemonicParsing="false" onAction="#omcClick" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Order Management Control" />
+            <Button fx:id="pmcControl" layoutX="86.0" layoutY="116.0" mnemonicParsing="false" onAction="#pmcClick" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Product Management Control" />
+            <Button fx:id="amcControl" layoutX="84.0" layoutY="167.0" mnemonicParsing="false" onAction="#amcClick" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Account Management Control" />
+            <Button fx:id="addControl" layoutX="105.0" layoutY="212.0" mnemonicParsing="false" onAction="#addClick" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Add Admin Account" />
+            <Button fx:id="back" layoutX="14.0" layoutY="261.0" mnemonicParsing="false" onAction="#backClick" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Back" />
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <VBox prefHeight="44.0" prefWidth="367.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar styleClass="button-viewHist" stylesheets="@OTPSTheme.css">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

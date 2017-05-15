@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="794.0" styleClass="background" stylesheets="@OTPSTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CartPanelController">
+   <top>
+      <VBox prefHeight="60.0" prefWidth="386.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="30.0" prefWidth="438.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <right>
+      <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="calcTotal" mnemonicParsing="false" onAction="#calcTotalButtonClick" prefHeight="59.0" prefWidth="178.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Calculate Total">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="checkoutButton" mnemonicParsing="false" onAction="#checkoutButtonClick" prefHeight="59.0" prefWidth="178.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Proceed To Checkout" />
+            <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#addButtonClick" prefHeight="52.0" prefWidth="179.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Add Product" />
+            <HBox prefHeight="63.0" prefWidth="180.0">
+               <children>
+                  <Button fx:id="removeProductButton" mnemonicParsing="false" onAction="#removeButtonClick" prefHeight="52.0" prefWidth="190.0" styleClass="button-viewHist" stylesheets="@OTPSTheme.css" text="Remove Product" />
+               </children>
+            </HBox>
+         </children>
+      </FlowPane>
+   </right>
+   <bottom>
+      <Button fx:id="backToMain" mnemonicParsing="false" onAction="#mainMenuButtonclick" styleClass="button-viewHist" text="Back To Main Menu" BorderPane.alignment="CENTER">
+         <stylesheets>
+            <URL value="@application.css" />
+            <URL value="@OTPSTheme.css" />
+         </stylesheets></Button>
+   </bottom>
+   <left>
+      <TableView fx:id="cartTable" prefHeight="269.0" prefWidth="333.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="135.0" text="Product Name" />
+          <TableColumn fx:id="quantColumn" prefWidth="107.0" text="Quantity" />
+            <TableColumn fx:id="totalColumn" prefWidth="88.0" text="Total" />
+        </columns>
+      </TableView>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="addProdText" layoutX="47.0" layoutY="124.0" prefHeight="32.0" prefWidth="110.0" promptText="Enter Product ID..." />
+            <TextField fx:id="removeProdText" layoutX="43.0" layoutY="182.0" prefHeight="33.0" prefWidth="110.0" promptText="Enter Product ID..." />
+            <Label layoutX="51.0" layoutY="14.0" text="Cart Total:" />
+            <Label fx:id="cartTotal" layoutX="114.0" layoutY="14.0" text="Label" textFill="#3b9a53" />
+            <TextField fx:id="addProdAmt" layoutX="165.0" layoutY="124.0" prefHeight="32.0" prefWidth="71.0" promptText="Amount..." />
+            <Label fx:id="invalidAddId" layoutX="55.0" layoutY="156.0" text="Invalid Product ID" textFill="RED" />
+            <Label fx:id="invalidRemoveId" layoutX="86.0" layoutY="213.0" text="Invalid Product ID" textFill="RED" />
+            <Label fx:id="invalidAmt" layoutX="157.0" layoutY="156.0" prefHeight="17.0" prefWidth="88.0" text="Invalid Amount" textFill="RED" />
+            <Label fx:id="notEnuffStock" layoutX="98.0" layoutY="167.0" text="Not Enough Stock" textFill="RED" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
